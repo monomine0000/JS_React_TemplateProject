@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="namespace" default="agent01" doc="Namespace to push all topics into" />
+
+
+    <node pkg="mission_execution" type="mission_execution_server.py"
+      name="mission_control" output="screen">
+    </node>
+
+    <!-- start rosbridge server -->
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+
+</launch>
